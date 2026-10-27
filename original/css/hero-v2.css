@@ -1,0 +1,46 @@
+/* Hero — matched to the supplied 1672×941 mockup */
+.hero .nav{background:none!important;border:0!important;box-shadow:none!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important;border-radius:0!important;top:6%!important;left:0!important;right:0!important;width:100%!important;height:15%!important;padding:0 3.8%!important;margin:0!important;max-width:none!important;transform:none!important}
+.hero .logo bdi{font:300 4.9cqw/.85 'Cormorant Garamond',serif!important;letter-spacing:.06em!important;color:#f6eee4}
+.hero .logo small{font:italic 300 1.45cqw 'Frank Ruhl Libre',serif!important;letter-spacing:0!important;margin-top:.5cqw!important;color:#f6eee4;opacity:.92}
+.hero .nav nav{gap:4cqw!important;font:300 1.15cqw 'Noto Sans Hebrew',sans-serif!important}
+.hero .nav nav a{color:#f6eee4!important;padding-bottom:.45cqw;border-bottom:1px solid transparent}
+.hero .nav nav a.active{border-bottom-color:#f6eee4}
+.hero .nav nav a.active::after,.hero .nav nav a.active::before{display:none!important}
+.hero .nav-icons{gap:1.3cqw!important}
+.hero .nav-icons svg{width:2.05cqw!important;height:2.05cqw!important;stroke-width:1.5!important}
+.hero-brand-art text{font-family:'Cormorant Garamond',serif!important;font-weight:300!important;font-size:360px!important;letter-spacing:-6px!important;fill:#f4e6db!important}
+.hero-kicker,.hero-side{font-family:'Bodoni Moda','Cormorant Garamond',serif!important;font-weight:400!important;color:#f5eadd!important;text-align:left!important;direction:ltr!important}
+.hero-kicker{top:23.6%!important;left:25.2%!important;font-size:1cqw!important;line-height:1.6!important;letter-spacing:.42em!important}
+.hero-side{top:47.8%!important;right:3.2%!important;left:auto!important;font-size:1.12cqw!important;line-height:1.75!important;letter-spacing:.14em!important}
+.hero-kicker i,.hero-side i{display:block!important;height:1px!important;background:#f5eadd!important;width:2.8cqw!important;margin-top:1.3cqw!important}
+.hero .announcement{font:300 1.03cqw 'Noto Sans Hebrew',sans-serif!important}
+.hero .announcement span{display:flex!important}
+.hero .trust-bar{direction:ltr!important;background:#c5ad9d16!important;border:1.5px solid #f4e8dbb3!important;border-radius:1.1cqw!important}
+.hero .trust-bar p{direction:ltr!important;text-align:left!important}
+.hero .trust-bar strong{font:300 1.2cqw 'Assistant','Noto Sans Hebrew',sans-serif!important;letter-spacing:.01em}
+.hero .trust-bar small{font:300 .94cqw/1.8 'Assistant','Noto Sans Hebrew',sans-serif!important}
+@media(max-width:767px){.hero .nav{top:34px!important;height:85px!important;padding-inline:20px!important}.hero .logo bdi{font-size:45px!important}.hero .logo small{font-size:12px!important}.hero-kicker,.hero-side{font-size:11px!important}.hero .trust-bar strong{font-size:11px!important}.hero .trust-bar small{font-size:9px!important}.hero .announcement{font-size:10px!important}}
+
+/* Categories — "Perfect Match" arch cards */
+.category-section{padding:0 0 90px!important;background:#f3ebe3!important;overflow:hidden}
+.cat-marquee{overflow:hidden;border-block:1px solid #e2d4c7;background:#efe5db;padding:14px 0;margin-bottom:70px}
+.cat-marquee-track{display:flex;gap:42px;width:max-content;animation:catmarq 45s linear infinite;font:400 clamp(17px,1.6vw,24px) 'Cormorant Garamond',serif;letter-spacing:.12em;text-transform:uppercase;color:#6e5547;white-space:nowrap}
+.cat-marquee-track span{direction:rtl}
+@keyframes catmarq{to{transform:translateX(-50%)}}
+.category-section .ed-centered h2{font:400 clamp(40px,4.4vw,64px)/1.1 'Frank Ruhl Libre',serif!important;color:#3a2c24!important;letter-spacing:-.02em}
+.category-section .ed-centered p{color:#7a6152!important}
+.category-section .category-grid{display:grid!important;grid-template-columns:repeat(6,minmax(0,1fr))!important;gap:clamp(14px,1.6vw,26px)!important;max-width:1440px;margin:56px auto 0!important;padding:0 var(--gutter,5vw)!important}
+.category-tile.arch{display:flex!important;flex-direction:column!important;align-items:center!important;text-align:center!important;gap:0!important;padding:0!important;background:linear-gradient(180deg,#fbf6f1 0%,#ecdfd3 100%)!important;border:1px solid #fff!important;border-radius:999px 999px 26px 26px!important;box-shadow:0 18px 40px rgba(110,85,71,.12),inset 0 0 0 6px rgba(255,255,255,.55)!important;overflow:hidden!important;aspect-ratio:auto!important;height:auto!important;transition:transform .45s cubic-bezier(.22,1,.36,1),box-shadow .45s!important}
+.category-tile.arch:hover{transform:translateY(-8px)!important;box-shadow:0 28px 55px rgba(110,85,71,.2),inset 0 0 0 6px rgba(255,255,255,.55)!important}
+.category-tile.arch .category-photo{width:100%!important;aspect-ratio:3/3.4!important;height:auto!important;border-radius:999px 999px 0 0!important;overflow:hidden!important;margin:0!important;background:none!important}
+.category-tile.arch .category-photo img{width:100%!important;height:100%!important;object-fit:cover!important;transition:transform .7s cubic-bezier(.22,1,.36,1)}
+.category-tile.arch:hover .category-photo img{transform:scale(1.06)}
+.category-tile.arch .arch-info{position:static!important;width:100%!important;padding:16px 10px 22px!important;display:flex!important;flex-direction:column!important;align-items:center!important;gap:4px!important;transform:none!important}
+.category-tile.arch .arch-info small{position:static!important;display:block!important;width:auto!important;white-space:nowrap!important;line-height:1.4!important;font:400 12px/1.4 'Noto Sans Hebrew',sans-serif!important;color:#b08a6a!important;letter-spacing:.04em}
+.category-tile.arch .arch-info h3{position:static!important;width:auto!important;white-space:nowrap!important;transform:none!important;font:400 clamp(16px,1.25vw,20px)/1.2 'Frank Ruhl Libre',serif!important;color:#3a2c24!important;margin:0!important}
+.category-tile.arch>span{display:none!important}
+.cat-more{display:flex;justify-content:center;margin-top:48px}
+.cat-more a{display:inline-flex;align-items:center;gap:12px;padding:11px 26px;border:1px solid #4a382f;border-radius:999px;font:400 14px 'Noto Sans Hebrew',sans-serif;color:#4a382f;transition:background .3s,color .3s}
+.cat-more a:hover{background:#4a382f;color:#f7f1ea}
+@media(max-width:1100px){.category-section .category-grid{grid-template-columns:repeat(3,minmax(0,1fr))!important}}
+@media(max-width:600px){.category-section .category-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}.cat-marquee{margin-bottom:48px}}

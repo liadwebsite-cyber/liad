@@ -1,0 +1,248 @@
+/* ─────────────────────────────────────────────────────────────
+   refs.css — reference touches layered on top of the original site.
+   Nothing here changes structure, copy, colours or the hero/about
+   gel animation. Remove this one <link> to get the site back as it was.
+   Language: frosted "liquid glass" surfaces, heavily blurred studio
+   photography behind sections, arch-topped media, soft pearl light.
+   ───────────────────────────────────────────────────────────── */
+
+:root {
+  --g-fill: rgba(250, 244, 238, 0.42);
+  --g-fill-strong: rgba(250, 244, 238, 0.66);
+  --g-edge: rgba(255, 252, 248, 0.72);
+  --g-blur: blur(22px) saturate(140%);
+  --g-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.85), inset 0 -1px 0 rgba(110, 85, 71, 0.08),
+    0 30px 60px -34px rgba(74, 56, 47, 0.38), 0 10px 22px -16px rgba(74, 56, 47, 0.18);
+}
+
+/* shared glass recipe */
+.header-glass,
+.trust-bar,
+.loop-card,
+.category-tile,
+.academy-grid .editorial-card,
+.jcard,
+.contact-editorial .faq,
+.contact-editorial .location,
+.world-copy,
+.branch-copy {
+  -webkit-backdrop-filter: var(--g-blur);
+  backdrop-filter: var(--g-blur);
+}
+
+/* ── blurred studio photography behind each editorial section ── */
+#products::before,
+#worlds::before,
+#categories::before,
+#academy::before,
+#journal::before,
+#contact::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background: center / cover no-repeat;
+  opacity: 0.55;
+  -webkit-mask-image: linear-gradient(to bottom, transparent, #000 16%, #000 84%, transparent);
+  mask-image: linear-gradient(to bottom, transparent, #000 16%, #000 84%, transparent);
+}
+#products::before {
+  background-image: url("../assets/img/bg/silk.webp");
+  opacity: 0.8;
+}
+#worlds::before {
+  background-image: url("../assets/img/bg/worlds.webp");
+}
+#categories::before {
+  background-image: url("../assets/img/bg/shop.webp");
+}
+#academy::before {
+  background-image: url("../assets/img/bg/about.webp");
+}
+#journal::before {
+  background-image: url("../assets/img/bg/silk.webp");
+  opacity: 0.8;
+}
+#contact::before {
+  background-image: url("../assets/img/bg/hero.webp");
+  opacity: 0.45;
+}
+
+/* ── hero & about: same scene, glass details only ── */
+.nav.shell {
+  width: min(calc(100% - 2 * var(--gutter, 40px)), 1360px);
+  height: 84px;
+  margin: 10px auto 0;
+  padding-inline: 34px 18px;
+  border-radius: 999px;
+  background: rgba(250, 244, 238, 0.22);
+  border: 1px solid rgba(255, 252, 248, 0.55);
+  box-shadow: var(--g-shadow);
+  -webkit-backdrop-filter: blur(18px) saturate(140%);
+  backdrop-filter: blur(18px) saturate(140%);
+}
+.nav.shell .logo bdi {
+  font-size: 44px;
+}
+.trust-bar {
+  border-radius: 30px;
+  background: rgba(250, 244, 238, 0.2) !important;
+  border: 1px solid rgba(255, 252, 248, 0.6) !important;
+  box-shadow: var(--g-shadow);
+}
+.trust-icon {
+  border-radius: 50%;
+  background: rgba(255, 252, 248, 0.35);
+  border: 1px solid rgba(255, 252, 248, 0.7);
+}
+
+/* ── products: glass tiles, product sits on a soft pearl plinth ── */
+.loop-card {
+  background: var(--g-fill);
+  border: 1px solid var(--g-edge);
+  border-radius: 22px;
+  box-shadow: var(--g-shadow);
+}
+.loop-card:hover {
+  box-shadow: var(--g-shadow), 0 26px 44px -22px rgba(74, 56, 47, 0.42);
+}
+.loop-img {
+  margin: 8px 8px 0;
+  border-radius: 16px;
+  background: radial-gradient(70% 55% at 50% 72%, #fff 0%, #f6efe9 60%, #efe5dd 100%);
+}
+.loop-img img {
+  mix-blend-mode: multiply; /* white product photos melt into the plinth */
+}
+.loop-head .ed-pill,
+.loop-arrows button {
+  background: var(--g-fill) !important;
+  border: 1px solid var(--g-edge) !important;
+  -webkit-backdrop-filter: var(--g-blur);
+  backdrop-filter: var(--g-blur);
+}
+
+/* ── two worlds: copy on a frosted plate ── */
+.world-copy {
+  background: rgba(250, 244, 238, 0.4);
+  border-inline-start: 1px solid rgba(255, 252, 248, 0.6);
+}
+.world-medallion {
+  background: rgba(250, 244, 238, 0.55) !important;
+  border: 1px solid rgba(255, 252, 248, 0.8);
+  -webkit-backdrop-filter: var(--g-blur);
+  backdrop-filter: var(--g-blur);
+  box-shadow: var(--g-shadow);
+}
+
+/* ── categories: arch-topped photos inside glass ── */
+.category-tile {
+  background: var(--g-fill) !important;
+  border: 1px solid var(--g-edge);
+  border-radius: 999px 999px 18px 18px !important;
+  box-shadow: var(--g-shadow) !important;
+  padding: 6px 6px 0;
+  transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.45s;
+}
+.category-photo {
+  border-radius: 999px 999px 12px 12px;
+  overflow: hidden;
+}
+@media (hover: hover) {
+  .category-tile:hover {
+    transform: translateY(-6px);
+  }
+}
+
+/* ── branches banner: copy on glass ── */
+.branch-copy {
+  background: rgba(250, 244, 238, 0.3);
+  border: 1px solid rgba(255, 252, 248, 0.55);
+  border-radius: 28px;
+  box-shadow: var(--g-shadow);
+  padding: 34px 40px !important;
+}
+
+/* ── academy: course cards as glass, arch-topped images ── */
+.academy-grid .editorial-card {
+  background: var(--g-fill) !important;
+  border: 1px solid var(--g-edge);
+  border-radius: 26px !important;
+  box-shadow: var(--g-shadow) !important;
+}
+.academy-grid .editorial-card-media {
+  border-radius: 999px 999px 16px 16px;
+  overflow: hidden;
+}
+.academy-grid .course-cta,
+.academy-more .ed-pill {
+  border-radius: 999px;
+}
+.vcard {
+  border-radius: 26px !important;
+  box-shadow: var(--g-shadow);
+  outline: 6px solid rgba(255, 252, 248, 0.35);
+  outline-offset: -6px;
+}
+
+/* ── journal: glass cards ── */
+.jcard {
+  background: var(--g-fill) !important;
+  border: 1px solid var(--g-edge);
+  border-radius: 24px !important;
+  box-shadow: var(--g-shadow) !important;
+  overflow: hidden;
+}
+.jcard-media {
+  margin: 8px 8px 0;
+  width: calc(100% - 16px) !important;
+  border-radius: 18px;
+  overflow: hidden;
+}
+
+/* ── contact / faq: frosted panel ── */
+.contact-editorial .faq,
+.contact-editorial .location {
+  background: var(--g-fill) !important;
+  border: 1px solid var(--g-edge);
+  border-radius: 28px;
+  box-shadow: var(--g-shadow);
+}
+.contact-editorial .faq {
+  padding: 18px 34px 24px !important;
+}
+
+/* ── community (dark): glass input + photo frame ── */
+.c2-input {
+  border-radius: 999px !important;
+  border: 1px solid rgba(251, 245, 238, 0.22) !important;
+  -webkit-backdrop-filter: blur(18px);
+  backdrop-filter: blur(18px);
+}
+.c2-main {
+  border-radius: 28px;
+  overflow: hidden;
+}
+
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  .loop-card,
+  .category-tile,
+  .academy-grid .editorial-card,
+  .jcard,
+  .contact-editorial .faq {
+    background: #f7f0e9 !important;
+  }
+}
+
+@media (max-width: 760px) {
+  .nav.shell {
+    width: calc(100% - 24px);
+    margin: 8px 12px 0;
+    height: 68px;
+    padding-inline: 18px 10px;
+  }
+  .nav.shell .logo bdi {
+    font-size: 38px;
+  }
+}

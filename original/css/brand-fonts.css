@@ -1,0 +1,49 @@
+@font-face {
+  font-family: 'Playpen Sans Hebrew';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(../assets/fonts/liad-type-0.woff2) format('truetype');
+}
+@font-face {
+  font-family: 'Playpen Sans Hebrew';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(../assets/fonts/liad-type-1.woff2) format('truetype');
+}
+@font-face {
+  font-family: 'Playpen Sans Hebrew';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(../assets/fonts/liad-type-2.woff2) format('truetype');
+}
+@font-face {
+  font-family: 'Rubik';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(../assets/fonts/liad-type-3.woff2) format('truetype');
+}
+@font-face {
+  font-family: 'Rubik';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(../assets/fonts/liad-type-4.woff2) format('truetype');
+}
+@font-face {
+  font-family: 'Rubik';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(../assets/fonts/liad-type-5.woff2) format('truetype');
+}
+@font-face {
+  font-family: 'Rubik';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(../assets/fonts/liad-type-6.woff2) format('truetype');
+}

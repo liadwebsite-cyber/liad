@@ -1,0 +1,71 @@
+/* LIAD v5 — mixed buttons, sprawling picks bento, testimonial carousel cards */
+/* Buttons — one shape per group.
+   ROUND (pill + arrow circle): .ub (hero, picks), .cx-all/.cx-sub (courses)
+   SQUARE (category "לכל המוצרים" style): .lx-btn (about, worlds, gift), .hl-btn (final CTA), .ed-pill, .cat-more a */
+.lx-btn,.hl-btn,.ed-pill,.cat-more a,.hl-cards a{display:inline-flex!important;align-items:center!important;justify-content:center!important;gap:10px!important;border-radius:4px!important;padding:13px 30px!important;font:400 13px/1 'Noto Sans Hebrew',sans-serif!important;letter-spacing:.14em!important;background:transparent!important;color:#2A211C!important;border:1px solid #2A211C!important;outline:none!important;box-shadow:none!important;transform:none!important;transition:background .3s,color .3s!important}
+.lx-btn:hover,.hl-btn:hover,.ed-pill:hover,.cat-more a:hover,.hl-cards a:hover{background:#2A211C!important;color:#F7F3EF!important;transform:none!important}
+.lx-btn.solid,.hl-btn.solid{background:#2A211C!important;color:#F7F3EF!important}
+.lx-btn.solid:hover,.hl-btn.solid:hover{background:transparent!important;color:#2A211C!important}
+.lx-btn .ub-i,.hl-btn .ub-i{display:none!important}
+/* round group: both buttons the same pill */
+.cx-sub{background:#F7F3EF!important;color:#2A211C!important;border:1px solid rgba(42,33,28,.18)!important;border-radius:999px!important;outline:1px solid rgba(42,33,28,.28)!important;outline-offset:4px;padding:6px 26px 6px 6px!important}
+.cx-sub .ub-i{display:grid!important;background:#2A211C!important;color:#F7F3EF!important}
+.ub,.cx-all{border-radius:999px!important}
+.ub-i{border-radius:50%!important}
+.ub.ring{padding:7px 34px 7px 7px!important;outline:1px solid rgba(42,33,28,.4)!important;outline-offset:6px!important}
+
+/* Picks — products matched to slot shape */
+.pk-grid{max-width:1300px!important;grid-template-rows:repeat(2,minmax(230px,21vw))!important}
+.pk-tile{border-radius:32px!important;isolation:isolate}
+.pk-tile img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;transition:transform 1.2s cubic-bezier(.22,1,.36,1)}
+.pk-tile.t1{background:radial-gradient(80% 60% at 50% 40%,#fbeee4,#ecd2c0)!important}
+.pk-tile.t1 img{transform:scale(1.25);transform-origin:50% 42%}
+.pk-tile.t1:hover img{transform:scale(1.32)}
+.pk-tile.t2{background:linear-gradient(160deg,#f3e7dc,#e2cdbd)!important}
+.pk-tile.t2 img{padding:4% 14% 22%}
+.pk-tile.t3{background:linear-gradient(200deg,#efe4da,#d9c6b6)!important}
+.pk-tile.t3 img{padding:2% 12% 20%}
+.pk-tile.t4{background:#f4f1ee!important}
+.pk-tile.t4 img{object-fit:cover}
+.pk-tile.t5{background:radial-gradient(80% 60% at 50% 40%,#f7efe8,#dcc8b9)!important}
+.pk-tile.t5 img{transform:scale(1.3);transform-origin:50% 42%}
+.pk-tile.t5:hover img{transform:scale(1.37)}
+.pk-label{right:20px;bottom:20px;left:auto;max-width:calc(100% - 40px)}
+.pk-label b{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0}
+.pk-price{position:absolute;z-index:2;top:18px;right:18px;padding:7px 13px;border-radius:999px;background:rgba(247,243,239,.9);color:#2A211C;font:500 13px 'Rubik',sans-serif}
+.pk-head p{max-width:none!important}
+@media(max-width:900px){.pk-grid{grid-template-rows:none!important;grid-auto-rows:minmax(220px,50vw)!important}}
+@media(max-width:767px){.pk-label{right:12px;bottom:12px;max-width:calc(100% - 24px)}}
+
+/* Products carousel — warm plinth behind each product */
+#products .loop-img{background:radial-gradient(70% 60% at 50% 62%,#fffaf5 0%,#f1e4d8 62%,#e6d3c3 100%)!important}
+#products .loop-img img{mix-blend-mode:multiply}
+#products .loop-card{background:#fbf7f2!important}
+
+/* Testimonial carousel — keep the deck, restyle the cards */
+#proof .vcard{border-radius:28px!important;overflow:hidden}
+#proof .vcard figcaption .vlabel b{background:#F7F3EF!important}
+
+/* specificity fixes for the square group */
+html body .lx-btn:not(.solid),html body .hl-btn:not(.solid),html body #products .ed-pill,html body .cat-more a{background:transparent!important;color:#2A211C!important;border:1px solid #2A211C!important;border-radius:4px!important;outline:none!important;box-shadow:none!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important;padding:13px 30px!important;height:auto!important;min-height:0!important}
+html body .lx-btn:not(.solid):hover,html body .hl-btn:not(.solid):hover,html body #products .ed-pill:hover,html body .cat-more a:hover{background:#2A211C!important;color:#F7F3EF!important}
+html body #community .hl-more .hl-btn{padding:13px 30px!important;font-size:13px!important;line-height:1!important;width:auto!important;height:auto!important}
+html body #products .ed-pill{display:inline-flex!important;align-self:center}
+html body #products .ed-pill span{width:auto!important;height:auto!important;min-width:0!important;padding:0!important;background:none!important;border:0!important;box-shadow:none!important;font-size:inherit!important;line-height:1!important;color:inherit!important}
+html body #products .loop-head{align-items:center!important;height:auto!important}
+
+/* Picks — smaller section, full product photos with their backgrounds */
+html body .pk{padding:clamp(48px,5vw,76px) 5vw!important}
+html body .pk-head{margin-bottom:clamp(18px,2.4vw,30px)!important}
+html body .pk-head h2{font-size:clamp(26px,2.6vw,40px)!important}
+html body .pk-grid{max-width:980px!important;grid-template-rows:repeat(2,minmax(170px,15vw))!important;gap:12px!important}
+html body .pk-tile{border-radius:24px!important;background:#f4efe9!important}
+html body .pk-tile img{inset:0!important;top:0!important;bottom:0!important;width:100%!important;height:100%!important;padding:0!important;object-fit:cover!important;transform:none!important;mix-blend-mode:normal!important}
+html body .pk-tile:hover img{transform:scale(1.05)!important}
+html body .pk-tile::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(42,33,28,0) 60%,rgba(42,33,28,.28));pointer-events:none;z-index:1}
+html body .pk-label{right:12px!important;bottom:12px!important}
+html body .pk-label b{padding:10px 14px!important;font-size:13px!important}
+html body .pk-label .ub-i{width:38px!important;height:38px!important;font-size:14px!important}
+html body .pk-price{top:12px!important;right:12px!important;font-size:12px!important;padding:5px 11px!important}
+html body .pk-foot{margin-top:clamp(20px,2.6vw,34px)!important}
+@media(max-width:900px){html body .pk-grid{grid-template-rows:none!important;grid-auto-rows:minmax(180px,46vw)!important}}

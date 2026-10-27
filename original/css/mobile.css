@@ -1,0 +1,51 @@
+.m-letters,.m-bottle,.m-portrait,.m-about-art{display:none}
+@media(max-width:767px){
+#hero.hero{position:relative!important;height:820px!important;min-height:0!important;background:radial-gradient(80% 50% at 70% 55%,#c3a998 0%,transparent 70%),linear-gradient(180deg,#a48d7e,#9c8576 60%,#b39a8a)!important;overflow:hidden!important}
+#hero .scene-plate,#hero .hero-side,#hero .hero-brand-art{display:none!important}
+#hero .announcement{position:absolute!important;top:0!important;left:0!important;right:0!important;height:40px!important;display:flex!important;justify-content:center!important;align-items:center!important;gap:16px!important;font:300 12px 'Noto Sans Hebrew',sans-serif!important;color:#f6eee4!important;border-bottom:1px solid rgba(246,238,228,.35)!important;z-index:6}
+#hero .announcement>span:nth-of-type(3),#hero .announcement>i:nth-of-type(2){display:none!important}
+#hero .announcement svg{width:16px;height:16px}
+#hero .nav{position:absolute!important;top:40px!important;left:0!important;right:0!important;height:96px!important;padding:0 18px!important;display:flex!important;flex-direction:row-reverse!important;justify-content:space-between!important;align-items:center!important;z-index:6}
+#hero .nav>nav{display:none!important}
+#hero .logo bdi{font-size:44px!important}
+#hero .logo small{font-size:13px!important}
+#hero .nav-icons{direction:ltr!important;display:flex!important;gap:16px!important}
+#hero .nav-icons svg{width:22px!important;height:22px!important}
+#hero .menu-button{display:grid!important}
+#hero .hero-art{position:absolute!important;inset:0!important;container-type:normal!important}
+#hero .hero-kicker{display:block!important;position:absolute!important;top:160px!important;left:0!important;right:0!important;text-align:center!important;font:400 12px/1.9 'Bodoni Moda','Cormorant Garamond',serif!important;letter-spacing:.42em!important;color:#f5eadd!important;transform:none!important;width:auto!important}
+#hero .hero-kicker i{display:block!important;width:40px!important;height:1px!important;background:#f5eadd!important;margin:10px auto 0!important;position:static!important}
+#hero .m-letters{display:block;position:absolute;top:235px;right:-6px;font:300 168px/.8 'Cormorant Garamond',serif;letter-spacing:-.02em;color:#f4e6db;opacity:.92;z-index:1}
+#hero .m-bottle{display:block;position:absolute;top:270px;left:6px;width:132px;transform:rotate(-28deg);filter:drop-shadow(0 18px 24px rgba(70,45,35,.35));z-index:3}
+#hero .m-portrait{display:block;position:absolute;right:-24px;bottom:150px;width:300px;z-index:2;-webkit-mask-image:linear-gradient(180deg,#000 85%,transparent);mask-image:linear-gradient(180deg,#000 85%,transparent)}
+#hero .trust-bar{position:absolute!important;left:12px!important;right:12px!important;bottom:18px!important;top:auto!important;width:auto!important;transform:none!important;display:grid!important;grid-template-columns:repeat(4,minmax(0,1fr))!important;gap:0!important;padding:14px 6px!important;border:1px solid rgba(246,238,228,.45)!important;border-radius:18px!important;background:rgba(190,165,150,.28)!important;backdrop-filter:blur(10px)!important;-webkit-backdrop-filter:blur(10px)!important;z-index:5}
+#hero .trust-bar>div{display:flex!important;flex-direction:column!important;align-items:center!important;text-align:center!important;gap:8px!important;padding:0 4px!important;border-inline-start:1px solid rgba(246,238,228,.3)!important}
+#hero .trust-bar>div:first-child{border:0!important}
+#hero .trust-icon{width:40px!important;height:40px!important;display:grid!important;place-items:center!important;border:1px solid rgba(246,238,228,.5)!important;border-radius:50%!important}
+#hero .trust-icon svg{width:20px!important;height:20px!important}
+#hero .trust-bar p{display:flex!important;flex-direction:column!important;gap:2px!important}
+#hero .trust-bar strong{font:400 12px 'Noto Sans Hebrew',sans-serif!important;color:#f6eee4!important}
+#hero .trust-bar small{font:300 10px/1.4 'Noto Sans Hebrew',sans-serif!important;color:#f6eee4!important;opacity:.8}
+
+#about.about{position:relative!important;height:auto!important;min-height:0!important;display:flex!important;flex-direction:column!important;padding:56px 22px 40px!important;background:linear-gradient(180deg,#eadbd0,#e4d2c5 60%,#efe3da)!important;overflow:hidden!important}
+#about .scene-plate,#about .scene-foot{display:none!important}
+#about .about-copy{display:contents!important}
+#about .about-copy>*{position:relative!important;z-index:3;inset:auto!important;transform:none!important;max-width:none!important}
+#about .eyebrow{order:1;display:flex!important;align-items:center;gap:14px;font:400 12px 'Bodoni Moda','Cormorant Garamond',serif!important;letter-spacing:.3em!important;color:#5d4739!important}
+#about .eyebrow i{display:block!important;width:100px;height:1px;background:#a3876f}
+#about h2{order:2;font:400 40px/1.15 'Frank Ruhl Libre',serif!important;color:#2a211c!important;margin-top:60px!important;width:auto!important}
+#about .fine-rule{order:3;display:block!important;width:56px!important;height:1px!important;background:#a3876f!important;margin:18px 0!important}
+#about .about-copy>p:not(.eyebrow){order:4;font:300 15px/1.75 'Noto Sans Hebrew',sans-serif!important;color:#3d302a!important;max-width:60%!important}
+#about .about-ctas{order:5;margin-top:20px!important}
+#about .m-about-art{order:6;display:block;position:relative;height:420px;margin:-80px -22px 0;z-index:1}
+#about .m-letters{display:block;position:absolute;top:-330px;right:-8px;font:300 150px/.8 'Cormorant Garamond',serif;color:#f4e6db;opacity:.9}
+#about .m-ap{position:absolute;right:-10px;bottom:0;width:78%;-webkit-mask-image:linear-gradient(180deg,#000 80%,transparent);mask-image:linear-gradient(180deg,#000 80%,transparent)}
+#about .m-ab{position:absolute;right:14px;bottom:0;width:96px;transform:rotate(8deg);filter:drop-shadow(0 14px 20px rgba(70,45,35,.3))}
+#about .about-caption{position:absolute!important;top:300px!important;right:20px!important;left:auto!important;bottom:auto!important;transform:none!important;font:400 13px/2 'Frank Ruhl Libre',serif!important;letter-spacing:.2em!important;color:#5d4739!important;z-index:3;text-align:right!important}
+#about dl{order:7;display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;margin-top:28px!important;gap:0!important}
+#about dl>div{text-align:center!important;border-inline-start:1px solid #cdb9a9!important;padding:0 6px!important}
+#about dl>div:first-child{border:0!important}
+#about dt{font:400 34px 'Cormorant Garamond',serif!important;color:#2a211c!important}
+#about dd{font:300 13px 'Noto Sans Hebrew',sans-serif!important;color:#3d302a!important}
+}
+@media(max-width:380px){#hero .m-letters{font-size:150px}#hero .m-portrait{width:270px}#about h2{font-size:34px!important}}

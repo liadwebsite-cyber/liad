@@ -1,0 +1,87 @@
+/* LIAD motion + cinematic academy hero. Loaded after system.css on inner pages.
+   Hidden-before-reveal states only apply under html.motion (added by motion.js when motion is allowed). */
+
+/* ---------- Page transitions (cross-document View Transitions, progressive) ---------- */
+@view-transition{navigation:auto}
+::view-transition-old(root){animation:vt-out 220ms cubic-bezier(.4,0,1,1) both}
+::view-transition-new(root){animation:vt-in 420ms cubic-bezier(.16,1,.3,1) both}
+@keyframes vt-out{to{opacity:0;transform:translateY(-10px)}}
+@keyframes vt-in{from{opacity:0;transform:translateY(14px)}}
+
+/* ---------- Scroll reveals ---------- */
+html.motion .rv{opacity:0;transform:translateY(28px);filter:blur(6px);transition:opacity 800ms cubic-bezier(.16,1,.3,1) var(--d,0ms),transform 900ms cubic-bezier(.16,1,.3,1) var(--d,0ms),filter 800ms cubic-bezier(.16,1,.3,1) var(--d,0ms)}
+html.motion .rv.in{opacity:1;transform:none;filter:none}
+html.motion .rv-h.mx-split .mxw{display:inline-block;overflow:hidden;vertical-align:top;padding-bottom:.08em;margin-bottom:-.08em}
+html.motion .rv-h.mx-split .mxw>span{display:inline-block;transform:translateY(108%);transition:transform 900ms cubic-bezier(.16,1,.3,1)}
+html.motion .rv-h.mx-split.in .mxw>span{transform:none}
+html.motion .rv-clip{clip-path:inset(12% 6% 12% 6% round 28px);transition:clip-path 1200ms cubic-bezier(.16,1,.3,1)}
+html.motion .rv-clip img,html.motion .rv-clip video{transform:scale(1.14);transition:transform 1500ms cubic-bezier(.16,1,.3,1)}
+html.motion .rv-clip.in{clip-path:inset(0 0 0 0 round 0px)}
+html.motion .rv-clip.in img,html.motion .rv-clip.in video{transform:none}
+html.motion .ac-cine-frame.rv-clip.in,html.motion .sy-hero-media.rv-clip.in{clip-path:inset(0 0 0 0 round 24px)}
+html.motion .product-detail-media.rv-clip.in{clip-path:inset(0 0 0 0 round 24px)}
+html.motion .product-card.card-in{animation:card-in 700ms cubic-bezier(.16,1,.3,1) var(--d,0ms) both}
+@keyframes card-in{from{opacity:0;transform:translateY(22px) scale(.98)}}
+.btn,.add-small,.ac-contact-links a{transition:background-color 160ms ease,border-color 160ms ease,color 160ms ease,transform 120ms cubic-bezier(.23,1,.32,1),translate 380ms cubic-bezier(.23,1,.32,1)!important}
+.read-progress{position:fixed;top:0;inset-inline:0;height:3px;background:var(--ink);transform-origin:right;transform:scaleX(0);z-index:500;pointer-events:none}
+
+/* Product media gets a soft light sweep on hover. */
+@media(hover:hover) and (pointer:fine){
+  .product-media{position:relative;isolation:isolate}
+  .product-media:after{content:'';position:absolute;inset:0;background:linear-gradient(115deg,transparent 35%,#ffffffb3 50%,transparent 65%);transform:translateX(-120%);transition:transform 0s;pointer-events:none;z-index:1}
+  .product-card:hover .product-media:after{transform:translateX(120%);transition:transform 900ms cubic-bezier(.16,1,.3,1)}
+  .ac-track{transition:transform 500ms cubic-bezier(.16,1,.3,1),box-shadow 500ms cubic-bezier(.16,1,.3,1),border-color 300ms ease}
+  .ac-track:hover{transform:translateY(-4px);box-shadow:0 1px 2px #1d161110,0 24px 48px -24px #1d161140;border-color:var(--line-strong)}
+}
+
+/* ---------- Cinematic academy hero ---------- */
+.ac-cine{position:relative;isolation:isolate;overflow:hidden;background:#140f0b;color:#fff;margin-top:calc(-1 * var(--nav-offset));padding:calc(var(--nav-offset) + 40px) 0 88px;min-height:min(920px,100svh)}
+.ac-cine-bg{position:absolute;inset:-6%;width:112%;height:112%;object-fit:cover;filter:blur(38px) saturate(1.15) brightness(.62);transform:scale(1.08);z-index:-2}
+.ac-cine-shade{position:absolute;inset:0;z-index:-1;background:radial-gradient(120% 90% at 85% 40%,#140f0b00 0%,#140f0bb3 70%),linear-gradient(180deg,#140f0b66 0%,#140f0b00 30%,#140f0bcc 100%)}
+.ac-cine-inner{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:var(--s-7);align-items:center;min-height:calc(min(920px,100svh) - var(--nav-offset) - 128px)}
+.ac-cine .crumb{padding:0 0 var(--s-5);color:#ffffffa6}
+.ac-cine .crumb a{color:#ffffffcc}
+.ac-cine .crumb span:last-child{color:#fff}
+.ac-cine .eyebrow{color:#e9d9cb;letter-spacing:.22em}
+.ac-cine .ac-title{color:#fff;font-size:clamp(46px,6vw,92px);line-height:1.04;margin-bottom:var(--s-4);text-shadow:0 2px 30px #0000004d}
+.ac-cine .lead{color:#f3e9e0;font-size:19px;max-width:44ch}
+html body .ac-cine .btn.invert{background:#fff!important;color:#1d1611!important;border-color:#fff!important}
+html body .ac-cine .btn.invert:hover{background:#f3e9e0!important;border-color:#f3e9e0!important}
+html body .ac-cine .btn.light.invert{background:transparent!important;color:#fff!important;border-color:#ffffff80!important}
+html body .ac-cine .btn.light.invert:hover{background:#ffffff1a!important;border-color:#fff!important}
+.ac-cine-frame{position:relative;margin:0;justify-self:start;width:min(100%,380px);aspect-ratio:9/15.8;border-radius:24px;overflow:hidden;box-shadow:0 40px 90px -30px #000000b3,0 0 0 1px #ffffff1f}
+.ac-cine-frame video{width:100%;height:100%;object-fit:cover;display:block}
+.ac-cine-frame figcaption{position:absolute;inset:auto 0 0;padding:48px 18px 16px;background:linear-gradient(transparent,#000000a6);font-size:13px;color:#fff}
+.ac-cine-toggle{position:absolute;top:14px;left:14px;width:42px;height:42px;border-radius:50%;display:grid;place-items:center;background:#1d161199;color:#fff;backdrop-filter:blur(8px);border:1px solid #ffffff33;z-index:2;transition:background-color 160ms ease}
+.ac-cine-toggle:hover{background:#1d1611cc}
+.ac-cine-toggle svg{width:18px;height:18px;stroke-width:2}
+.ac-cine-toggle .i-play,.ac-cine-toggle.is-paused .i-pause{display:none}
+.ac-cine-toggle.is-paused .i-play{display:block}
+.ac-cine :focus-visible{outline-color:#fff}
+
+/* Scrolling word band under the hero */
+.ac-marquee{overflow:hidden;border-bottom:1px solid var(--line);background:var(--paper);padding:22px 0;margin-bottom:var(--s-7)}
+.ac-marquee-track{display:flex;width:max-content;gap:28px;align-items:center;animation:marquee 38s linear infinite;font:400 clamp(28px,3.4vw,46px)/1 var(--display);color:var(--ink);letter-spacing:-.01em;white-space:nowrap}
+.ac-marquee-track span:nth-child(4n+3){font-family:var(--hand);color:var(--accent)}
+.ac-marquee-track i{font-style:normal;color:var(--accent);font-size:.6em}
+@keyframes marquee{to{transform:translateX(50%)}}
+.ac-marquee:hover .ac-marquee-track{animation-play-state:paused}
+
+@media(max-width:980px){
+  .ac-cine{min-height:0;padding-bottom:var(--s-6)}
+  .ac-cine-inner{grid-template-columns:1fr;min-height:0;gap:var(--s-5)}
+  .ac-cine-frame{display:none}
+  .ac-cine-bg{inset:0;width:100%;height:100%;filter:brightness(.55) saturate(1.05);transform:none}
+  .ac-cine-shade{background:linear-gradient(180deg,#140f0b80 0%,#140f0b26 35%,#140f0be6 100%)}
+  .ac-cine-copy{padding-top:28vh}
+}
+@media(max-width:700px){
+  .ac-cine .ac-title{font-size:48px}
+  .ac-cine .lead{font-size:16px}
+  .ac-cine .actions .btn{flex:1}
+  .ac-marquee{padding:16px 0;margin-bottom:var(--s-6)}
+}
+@media(prefers-reduced-motion:reduce){
+  .ac-marquee-track{animation:none}
+  ::view-transition-old(root),::view-transition-new(root){animation:none}
+}

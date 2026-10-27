@@ -1,0 +1,106 @@
+/* LIAD v4 — Aurelle-style hero, unified buttons, Liad's picks bento */
+:root{--h-cream:#E8DCCC;--h-cream2:#DCCBB8;--h-brown:#6E5242;--h-terra:#B87656;--ink:#2A211C;--ivory:#F7F3EF}
+
+/* ---------- Unified button: pill + dark circle arrow + soft ring ---------- */
+.ub,.lx-btn,.hl-btn,.cx-all,.cx-sub,.hl-cards a{display:inline-flex!important;align-items:center;justify-content:space-between;gap:16px;min-width:0!important;padding:6px 26px 6px 6px!important;border-radius:999px!important;font:500 15px/1 'Rubik','Noto Sans Hebrew',sans-serif!important;letter-spacing:.02em!important;text-transform:none!important;background:var(--ink)!important;color:var(--ivory)!important;border:1px solid var(--ink)!important;outline:1px solid rgba(42,33,28,.28);outline-offset:4px;box-shadow:0 14px 26px -18px rgba(42,33,28,.6)!important;transition:transform .45s cubic-bezier(.22,1,.36,1),outline-offset .45s cubic-bezier(.22,1,.36,1),background .3s!important;white-space:nowrap;flex-direction:row!important;height:auto!important}
+.ub:hover,.lx-btn:hover,.hl-btn:hover,.cx-all:hover,.cx-sub:hover,.hl-cards a:hover{transform:translateY(-2px)!important;outline-offset:7px;background:#3d3028!important;color:var(--ivory)!important}
+.ub-i{order:2;flex:none;display:grid;place-items:center;width:40px;height:40px;border-radius:50%;background:var(--ivory);color:var(--ink);font-style:normal;font-size:16px;line-height:1;transition:transform .45s cubic-bezier(.22,1,.36,1)}
+.ub:hover .ub-i,.lx-btn:hover .ub-i,.hl-btn:hover .ub-i,.cx-all:hover .ub-i,.cx-sub:hover .ub-i{transform:rotate(-45deg)}
+/* light variant: every non-solid button */
+.ub:not(.solid),.lx-btn:not(.solid),.hl-btn:not(.solid),.cx-sub{background:var(--ivory)!important;color:var(--ink)!important;border-color:rgba(42,33,28,.18)!important}
+.ub:not(.solid):hover,.lx-btn:not(.solid):hover,.hl-btn:not(.solid):hover,.cx-sub:hover{background:#fff!important;color:var(--ink)!important}
+.ub:not(.solid) .ub-i,.lx-btn:not(.solid) .ub-i,.hl-btn:not(.solid) .ub-i,.cx-sub .ub-i{background:var(--ink);color:var(--ivory)}
+.lx-btn::before,.lx-btn::after,.hl-btn::before,.hl-btn::after{display:none!important}
+.hl-cards a{padding:12px 24px!important;font-size:14px!important}
+
+/* ---------- Hero ---------- */
+#hero.hero{background:
+  linear-gradient(118deg,rgba(255,250,243,.55) 0%,rgba(255,250,243,0) 26%,rgba(255,250,243,0) 40%,rgba(255,250,243,.28) 52%,rgba(255,250,243,0) 64%),
+  radial-gradient(60% 80% at 30% 60%,rgba(255,248,240,.5),rgba(255,248,240,0) 70%),
+  linear-gradient(180deg,#EADFD0 0%,#E2D3C2 100%)!important;color:var(--h-brown)}
+#hero .hx{display:none!important}
+#hero .announcement{background:#D9B9A6!important;color:var(--ink)!important}
+#hero .nav a,#hero .nav button{color:var(--ink)!important}
+#hero .logo img{filter:brightness(.45) sepia(.4)}
+#hero .ha{padding-top:clamp(120px,14vh,150px);padding-bottom:150px}
+.ha{position:relative;display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);align-items:end;min-height:calc(min(100svh,960px) - 110px);padding:0 6vw;direction:rtl;isolation:isolate}
+.ha-copy{align-self:center;display:flex;flex-direction:column;gap:clamp(16px,2vw,26px);padding:clamp(40px,6vh,80px) 0 0;z-index:3}
+.ha-top{display:flex;align-items:center;gap:18px;flex-wrap:wrap;animation:haUp 1.1s .05s cubic-bezier(.22,1,.36,1) both}
+.ha-eyebrow{margin:0;font:400 12px 'Noto Sans Hebrew',sans-serif;letter-spacing:.28em;color:#8a6b58}
+.glass{background:linear-gradient(135deg,rgba(255,255,255,.62),rgba(110,82,66,.10));border:1px solid rgba(110,82,66,.25);box-shadow:inset 0 1px 0 rgba(255,255,255,.9),inset 0 -8px 18px rgba(255,255,255,.12),0 18px 34px -20px rgba(80,55,40,.45);backdrop-filter:blur(14px) saturate(1.4);-webkit-backdrop-filter:blur(14px) saturate(1.4)}
+.ha-proof{display:flex;align-items:center;gap:12px;padding:7px 18px 7px 7px;border-radius:999px}
+.ha-av{display:flex;direction:ltr}
+.ha-av img{width:40px;height:40px;border-radius:50%;object-fit:cover;border:2px solid #fff;margin-left:-12px}
+.ha-av img:first-child{margin-left:0}
+.ha-proof p{margin:0;display:flex;flex-direction:column;line-height:1.15}
+.ha-proof b{font:500 17px 'Rubik',sans-serif;color:var(--ink);text-align:right}
+.ha-proof span{font:400 12px 'Noto Sans Hebrew',sans-serif;color:#6d5a4d}
+.ha-title{margin:0;font:400 clamp(48px,6.2vw,104px)/1.02 'Bellefair','Frank Ruhl Libre',serif;color:var(--h-brown);letter-spacing:-.005em;animation:haUp 1.2s .15s cubic-bezier(.22,1,.36,1) both}
+.ha-lead{margin:0;max-width:40ch;font:300 clamp(14px,1.05vw,17px)/1.85 'Rubik','Noto Sans Hebrew',sans-serif;color:#6d5a4d;animation:haUp 1.2s .28s cubic-bezier(.22,1,.36,1) both}
+.ha-ctas{display:flex;gap:16px;flex-wrap:wrap;animation:haUp 1.2s .4s cubic-bezier(.22,1,.36,1) both}
+.ha-photo{position:relative;margin:0;align-self:end;justify-self:center;width:min(100%,760px);z-index:2;animation:haPhoto 1.6s .1s cubic-bezier(.22,1,.36,1) both}
+.ha-photo>img{display:block;width:100%;height:auto;filter:drop-shadow(-30px 30px 40px rgba(110,82,66,.22));-webkit-mask-image:linear-gradient(180deg,#000 88%,transparent 100%);mask-image:linear-gradient(180deg,#000 88%,transparent 100%)}
+.ha-tag{position:absolute;left:-2%;bottom:26%;background:rgba(247,243,239,.86)!important;display:flex;flex-direction:column;align-items:center;gap:4px;width:clamp(120px,11vw,160px);padding:14px 12px 12px;border-radius:22px;color:var(--ink)!important;animation:haUp 1.2s .9s both;transition:transform .45s cubic-bezier(.22,1,.36,1)}
+.ha-tag:hover{transform:translateY(-4px)}
+.ha-tag img{height:clamp(70px,7vw,96px);width:auto}
+.ha-tag small{font:500 9px 'Rubik',sans-serif;letter-spacing:.14em;color:#6d5a4d;text-align:center}
+.ha-tag b{font:400 18px 'Bellefair',serif;color:var(--ink)}
+.ha-plus{position:absolute;top:-12px;left:-12px;width:28px;height:28px;border-radius:50%;background:var(--ink);color:var(--ivory);display:grid;place-items:center;font:400 18px/1 'Rubik',sans-serif}
+.ha-seal{position:absolute;left:auto;right:8%;top:2%;background:rgba(247,243,239,.82)!important;width:96px;aspect-ratio:1;border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;line-height:1;animation:haUp 1.2s 1.05s both}
+.ha-seal strong{font:400 34px/1 'Bellefair',serif;color:var(--h-brown)}
+.ha-seal small{font:400 10px 'Noto Sans Hebrew',sans-serif;color:#6d5a4d;margin-top:3px}
+/* LUNEA-style bottom: curved edge + centred pill */
+.ha::after{content:'';position:absolute;z-index:4;left:-10%;right:-10%;bottom:-1px;height:80px;background:#EFE1D4;border-radius:50% 50% 0 0/100% 100% 0 0;pointer-events:none}
+.ha-bottom{position:absolute;z-index:5;left:50%;bottom:44px;transform:translateX(-50%)}
+.ub.ring{outline:1px solid rgba(42,33,28,.4);outline-offset:6px;padding:7px 34px 7px 7px!important;font-size:16px!important}
+@keyframes haUp{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
+@keyframes haPhoto{from{opacity:0;transform:translateY(40px)}to{opacity:1;transform:none}}
+
+/* ---------- Liad's picks (bento) ---------- */
+.pk{background:linear-gradient(180deg,#F7F3EF,#EFE1D4);padding:clamp(70px,8vw,120px) 5vw;direction:rtl}
+.pk-head{display:flex;flex-direction:column;align-items:center;gap:14px;text-align:center;margin-bottom:clamp(30px,4vw,54px)}
+.pk-head h2{margin:0;font:600 clamp(30px,3.4vw,52px)/1.2 'Rubik','Noto Sans Hebrew',sans-serif!important;color:var(--ink)}
+.pk-head h2 .cx-script{font:500 1.05em 'Playpen Sans Hebrew',cursive}
+.pk-head p{margin:0;font:300 clamp(15px,1.2vw,18px)/1.7 'Rubik','Noto Sans Hebrew',sans-serif;color:#5d4739;max-width:56ch}
+.pk-grid{max-width:1300px;margin:0 auto;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));grid-template-rows:repeat(2,minmax(220px,22vw));gap:clamp(12px,1.4vw,22px)}
+.pk-tile{position:relative;display:block;border-radius:34px;overflow:hidden;background:#e6d6c6}
+.pk-tile img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform 1.2s cubic-bezier(.22,1,.36,1)}
+.pk-tile:hover img{transform:scale(1.05)}
+.t1{grid-column:1;grid-row:1/3}.t2{grid-column:2}.t3{grid-column:3}.t4{grid-column:2/4;grid-row:2}.t5{grid-column:4;grid-row:1/3}
+.pk-label{position:absolute;z-index:2;right:22px;bottom:22px;display:flex;align-items:center;gap:0;direction:rtl}
+.pk-label b{order:1;padding:15px 28px;border-radius:999px;background:#fff;font:600 clamp(15px,1.3vw,20px)/1 'Rubik','Noto Sans Hebrew',sans-serif;color:var(--ink);box-shadow:0 12px 24px -16px rgba(42,33,28,.5)}
+.pk-label .ub-i{order:2;width:54px;height:54px;margin-right:-8px;background:var(--ink);color:var(--ivory);font-size:20px;border:3px solid #fff}
+.pk-tile:hover .pk-label .ub-i{transform:rotate(-45deg)}
+.pk-foot{display:flex;justify-content:center;margin-top:clamp(28px,3.4vw,48px)}
+/* same label style on testimonial videos */
+.vcard figcaption .vlabel{position:absolute;right:14px;bottom:14px;left:auto}
+.vcard figcaption .vlabel b{padding:11px 18px;font-size:13px}
+.vcard figcaption .vlabel .ub-i{width:42px;height:42px;font-size:12px}
+.vcard figcaption{position:absolute;inset:0;pointer-events:none}
+.vcard figcaption .vlabel{pointer-events:auto}
+
+@media(max-width:900px){
+ .ha{grid-template-columns:1fr;padding:0 20px}
+ .ha-copy{order:1;align-items:center;text-align:center;padding:26px 0 8px}
+ .ha-top{justify-content:center}
+ #hero .ha{padding-top:96px;padding-bottom:120px}
+ .ha-photo{order:2;width:min(100%,520px);margin:0}
+ .ha-bottom{bottom:30px}
+ .pk-grid{grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:none;grid-auto-rows:minmax(200px,52vw)}
+ .t1,.t2,.t3,.t4,.t5{grid-column:auto;grid-row:auto}
+ .t4{grid-column:1/3}
+}
+@media(max-width:767px){
+ .ha-title{font-size:44px}
+ .ha-ctas{justify-content:center}
+ .ha-tag{width:110px;left:0;bottom:14%}
+ .ha-seal{width:76px;right:0;left:auto;top:6%}.ha-seal strong{font-size:26px}
+ .ha::after{height:56px}
+ .pk-tile{border-radius:24px}
+ .pk-label{right:12px;bottom:12px}
+ .pk-label b{padding:11px 16px;font-size:13px}
+ .pk-label .ub-i{width:42px;height:42px;font-size:15px}
+ .ub,.lx-btn,.hl-btn,.cx-all,.cx-sub{font-size:14px!important}
+ .ub-i{width:36px;height:36px}
+}
+@media(prefers-reduced-motion:reduce){.ha *,.ha{animation:none!important}}

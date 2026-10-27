@@ -1,0 +1,13 @@
+# Working material kept locally, not part of the website
+backups/
+ref/
+reference-review/
+uploads/
+qa-screenshots/
+_ds/
+.playwright-mcp/
+.thumbnail
+support.js
+LIAD Palette.dc.html
+.DS_Store
+**/.DS_Store
